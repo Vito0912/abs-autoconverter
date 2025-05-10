@@ -1,0 +1,20 @@
+services:
+  abs-convert:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: abs-convert
+    environment:
+      - NODE_ENV=production
+      - ABS_HOST=<your_host_here>
+      - ABS_TOKEN=<your_token_here>
+      - CONVERSION_MATRIX=0|1|48000|1|1=opus|24000|1,0|1|48000|2|2=opus|24000|2,0|48000|72000|1|1=opus|48000|1,0|48000|72000|2|2=opus|48000|2,0|72000|256000|1|1=opus|64000|1,0|72000|256000|2|2=opus|64000|2,0|0|0|0|0=opus|64000|2
+      - EXCLUDED_CODECS=opus
+      - CONVERSION_DELAY=60000
+      - MAX_PARALLEL=6
+      - EMBED_METADATA=true
+      - ENCODE_LIBRARY=true
+      - DRY_RUN=false
+
+    # ONLY SET IF DRY_RUN IS FALSE!!!
+    restart: unless-stopped
