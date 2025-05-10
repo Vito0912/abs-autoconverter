@@ -1,5 +1,8 @@
 # ABS Autoconverter
 
+> [!IMPORTANT]
+> BETA VERSION - USE AT YOUR OWN RISK
+
 This tool converts your files in Audiobookshelf (ABS) according to defined rules. For examples of these rules, please refer to the [examples](#examples) section.
 
 Requirements:
