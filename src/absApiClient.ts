@@ -150,7 +150,7 @@ export class AbsApiClient {
     async getTasks(): Promise<number> {
         try {
             const response = await this.client.get("/api/tasks");
-            return response.data.tasks.length;
+            return response.data.tasks.filter((t: any) => t.action.includes('encode-m4b')).length;
         } catch (error) {
             this.handleApiError(error, "getTasks");
             throw error;
