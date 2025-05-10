@@ -3,7 +3,7 @@
 > [!IMPORTANT]
 > BETA VERSION - USE AT YOUR OWN RISK
 
-This tool converts your files in Audiobookshelf (ABS) according to defined rules. For examples of these rules, please refer to the [examples](#examples) section.
+This tool converts your files in Audiobookshelf (ABS) according to defined rules. For examples of these rules, please refer to the [examples](#examples-for-matrix) section.
 
 Requirements:
 - WebSocket support
@@ -59,8 +59,11 @@ The format for `CONVERSION_MATRIX` is as follows:
 
 A `0` in the matrix acts as a wildcard, matching any value. Codec names are case-sensitive and should generally be in lowercase.
 
-The following string:
-`0|1|48000|1|1=opus|24000|1,0|1|48000|2|2=opus|24000|2,0|48000|72000|1|1=opus|48000|1,0|48000|72000|2|2=opus|48000|2,0|72000|256000|1|1=opus|64000|1,0|72000|256000|2|2=opus|64000|2,0|0|0|0|0=opus|64000|2`
+The following string:\
+``` 
+0|1|48000|1|1=opus|24000|1,0|1|48000|2|2=opus|24000|2,0|48000|72000|1|1=opus|48000|1,0|48000|72000|2|2=opus|48000|2,0|72000|256000|1|1=opus|64000|1,0|72000|256000|2|2=opus|64000|2,0|0|0|0|0=opus|64000|2`
+```
+
 This string defines the following conversion rules:
 - Any codec with 1 audio channel and a bitrate between 1 and 48000 bps will be converted to `opus` at 24000 bps with 1 audio channel.
 - Any codec with 2 audio channels and a bitrate between 1 and 48000 bps will be converted to `opus` at 24000 bps with 2 audio channels.
