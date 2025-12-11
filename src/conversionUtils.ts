@@ -83,26 +83,12 @@ export function findConversion(
             (condFromChannels === "0" || inputChannels >= parseInt(condFromChannels)) &&
             (condToChannels === "0" || inputChannels <= parseInt(condToChannels))
         ) {
-            if (resultProfile.codec.toLowerCase() === "copy") {
-                return {
-                    codec: inputCodec,
-                    bitrate: inputBitrate.toString(),
-                    channels: inputChannels.toString(),
-                };
-            }
             return resultProfile;
         }
     }
 
     const fallbackProfile = matrix.get("0|0|0|0|0");
     if (fallbackProfile) {
-        if (fallbackProfile.codec.toLowerCase() === "copy") {
-            return {
-                codec: inputCodec,
-                bitrate: inputBitrate.toString(),
-                channels: inputChannels.toString(),
-            };
-        }
         return fallbackProfile;
     }
 
