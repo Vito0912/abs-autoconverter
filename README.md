@@ -1,7 +1,7 @@
 # ABS Autoconverter
 
 > [!IMPORTANT]
-> BETA VERSION - USE AT YOUR OWN RISK
+> Do NOT use an API token/keys. Use a legacy token (on the user page) instead. API tokens/keys do not support WebSockets at this time, which this program heavily depends on. I have already submitted a pull request [here](https://github.com/advplyr/audiobookshelf/pull/4974)
 
 This tool converts your files in Audiobookshelf (ABS) according to defined rules. For examples of these rules, please refer to the [examples](#examples-for-matrix) section.
 
@@ -21,7 +21,7 @@ Requirements:
 | VAR                 | Description                                                                                                                                          | required | default (if) |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|----------|--------------|
 | `ABS_HOST`          | The host address of your Audiobookshelf server (e.g., "localhost:13378" or "abs.example.com"). Do include the protocol prefix (http:// or https://). | Yes      |              |
-| `ABS_TOKEN`         | Your authentication token for the Audiobookshelf API.                                                                                                | Yes      |              |
+| `ABS_TOKEN`         | Your API token for the Audiobookshelf API. (Currently you need to use a legacy API token). See top                                                   | Yes      |              |
 | `MAX_PARALLEL`      | The maximum number of parallel conversion tasks. This value should ideally not exceed the number of available CPU cores minus one.                   | No       | `1`          |
 | `CONVERSION_DELAY`  | The delay in milliseconds before a conversion starts after an item is added to the queue.                                                            | No       | `15000`      |
 | `EMBED_METADATA`    | Specifies whether metadata should be embedded into the converted files. Set to "true" to enable.                                                     | No       | `false`      |
