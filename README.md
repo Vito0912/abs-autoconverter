@@ -1,8 +1,5 @@
 # ABS Autoconverter
 
-> [!IMPORTANT]
-> Do NOT use an API token/keys. Use a legacy token (on the user page) instead. API tokens/keys do not support WebSockets at this time, which this program heavily depends on. I have already submitted a pull request [here](https://github.com/advplyr/audiobookshelf/pull/4974)
-
 This tool converts your files in Audiobookshelf (ABS) according to defined rules. For examples of these rules, please refer to the [examples](#examples-for-matrix) section.
 
 Requirements:
